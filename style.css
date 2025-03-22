@@ -1,0 +1,83 @@
+/* 1. Reset domyślnych marginesów/paddingów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Ustawienie tła i wyśrodkowania elementów */
+body {
+  font-family: Arial, sans-serif;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  /* FLEX w pionie: dwie ramki jedna pod drugą, wyśrodkowane */
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  
+  /* Wysokość całego widoku, żeby dało się ładnie wyśrodkować */
+  min-height: 100vh;
+  color: #fff; /* Domyślny kolor tekstu */
+}
+
+/* 3. Klasa bazowa overlay dla półprzezroczystych boxów */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  margin: 10px 0; /* trochę odstępu między boxami */
+}
+
+/* 4. Oddzielne klasy, jeśli chcesz w razie potrzeby nadać inne style każdej ramce */
+.top-box {
+  /* np. inny margines lub wysokość, jeśli potrzebujesz */
+}
+
+.contact-box {
+  /* tu można dopasować styl kontaktu */
+}
+
+/* 5. Logo – większe niż poprzednio */
+.logo {
+  max-width: 250px; /* Zwiększ wartość, aby logo było jeszcze większe (np. 300px) */
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* 6. Napis główny */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* 7. Paragrafy */
+p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 0 auto 10px; /* niewielki odstęp na dole */
+}
+
+/* 8. Link do e-maila – biały z podkreśleniem */
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* 9. Responsywność (większe czcionki dla szerokości >= 768px) */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
+  .logo {
+    max-width: 300px; /* jeszcze większe logo na większych ekranach */
+  }
+}
